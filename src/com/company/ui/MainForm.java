@@ -17,27 +17,15 @@ public class MainForm extends JFrame {
 	public MainForm() throws HeadlessException {
 		super("Japanese Kanji Teacher");
 		dictionaryButton.addActionListener(e -> {
-            if (dictionaryForm == null) {
+            if (dictionaryForm == null || !dictionaryForm.isVisible()) {
                 if ((test1Form == null || !test1Form.isVisible())
                         && (test2Form == null || !test2Form.isVisible())
                         && (test3Form == null || !test3Form.isVisible()))
                     dictionaryForm = new DictionaryForm();
             }
-            else if (!dictionaryForm.isVisible()){
-                if ((test1Form == null || !test1Form.isVisible())
-                        && (test2Form == null || !test2Form.isVisible())
-                        && (test3Form == null || !test3Form.isVisible()))
-                    dictionaryForm.setVisible(true);
-            }
 		});
 		testButton.addActionListener(e -> {
-            if (test1Form == null) {
-                if ((test2Form == null || !test2Form.isVisible())
-                        && (dictionaryForm == null || !dictionaryForm.isVisible())
-                        && (test3Form == null || !test3Form.isVisible()))
-                    test1Form = new Test1Form();
-            }
-            else if (!test1Form.isVisible()){
+            if (test1Form == null || !test1Form.isVisible()) {
                 if ((test2Form == null || !test2Form.isVisible())
                         && (dictionaryForm == null || !dictionaryForm.isVisible())
                         && (test3Form == null || !test3Form.isVisible()))
@@ -45,13 +33,7 @@ public class MainForm extends JFrame {
             }
 		});
 		test2Button.addActionListener(e -> {
-            if (test2Form == null) {
-                if ((test1Form == null || !test1Form.isVisible())
-                        && (dictionaryForm == null || !dictionaryForm.isVisible())
-                        && (test3Form == null || !test3Form.isVisible()))
-                    test2Form = new Test2Form();
-            }
-            else if (!test2Form.isVisible()){
+            if (test2Form == null || !test2Form.isVisible()) {
                 if ((test1Form == null || !test1Form.isVisible())
                         && (dictionaryForm == null || !dictionaryForm.isVisible())
                         && (test3Form == null || !test3Form.isVisible()))
@@ -59,13 +41,7 @@ public class MainForm extends JFrame {
             }
         });
         translationTestButton.addActionListener(e ->{
-            if (test3Form == null) {
-                if ((test1Form == null || !test1Form.isVisible())
-                        && (dictionaryForm == null || !dictionaryForm.isVisible())
-                        && (test2Form == null || !test2Form.isVisible()))
-                    test3Form = new Test3Form();
-            }
-            else if (!test3Form.isVisible()){
+            if (test3Form == null || !test3Form.isVisible()) {
                 if ((test1Form == null || !test1Form.isVisible())
                         && (dictionaryForm == null || !dictionaryForm.isVisible())
                         && (test2Form == null || !test2Form.isVisible()))
